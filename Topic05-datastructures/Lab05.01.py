@@ -4,3 +4,4 @@ months_tuple = ("January","February","March","April","May","June","July","August
 summer_months_tuple = months_tuple[4:7]
 #trying out list comprehension to do as oneliner
 [print(x) for x in summer_months_tuple]
+
