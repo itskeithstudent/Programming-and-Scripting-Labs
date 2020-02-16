@@ -4,7 +4,8 @@ import random
 random_list =[]
 for i in range(10): #loop 10 times to append a random number to a list per loop
     random_list.append(random.randint(0,100))
-print(f"Queue is: {random_list}")
+print(f"Queue is: {random_list}") #print list after it has append 10 items to it
 while len(random_list) > 0: #while list still has items in it pop an item from list and print remaining
     print(f"Current Number is {random_list.pop()} and the queue is {random_list}")
-print("The Queue is now empty!")
+print("The Queue is now empty!") #final print statement
+
