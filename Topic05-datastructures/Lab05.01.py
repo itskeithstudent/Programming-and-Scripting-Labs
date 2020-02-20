@@ -15,5 +15,4 @@ print(todays_date.strftime('%b')) # print todays month
 #more intuitive solution
 import calendar
 print(calendar.day_name[todays_date.weekday()])
-print(todays_date.month())
 #print(calendar.month_name[todays_date.month()])
