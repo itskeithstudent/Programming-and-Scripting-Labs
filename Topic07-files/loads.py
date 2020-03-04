@@ -1,5 +1,6 @@
 ###Initialising dict and list and choice
 #some_dict = {"StudentName":"Keith", "Subjects": ["Web App Development", "Programming and Scripting", "Computer Architecture"]}
+import json
 list_of_dicts = []
 choice = ''
 
@@ -47,7 +48,15 @@ def subjects():
     print(subject_list)
     return subject_list
 
+def saveToFile():
+    with open("test.txt", "wt") as file:
+        json.dump(list_of_dicts,file)
 
+def loadFromFile():
+    global list_of_dicts
+    with open("test.txt", "wt") as file:
+        list_of_dicts=json.load(file)
+        print(list_of_dicts)
 
 choice = prompt()
 while choice.lower() != 'q':
@@ -56,19 +65,13 @@ while choice.lower() != 'q':
         list_of_dicts.append(add())
     if choice.lower()=="v":
         view(list_of_dicts)
+    if choice.lower()=='s':
+        saveToFile()
+    if choice.lower()=='l':
+        loadFromFile()
+
     choice = prompt()
 
 view(list_of_dicts)
 
-'''
-user_choice = prompt()
-
-#I don't care if user types in a or A, so casting str to all lowercase
-if(user_choice.lower()=="a"):
-        print("A")
-elif(user_choice.lower()=="v"):
-        print(f"{some_dict}")
-elif(user_choice.lower()=="q"):
-        print("Q")
-
-'''
+print(list_of_dicts)
